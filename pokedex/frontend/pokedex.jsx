@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { fetchAllPokemon } from './util/api_util';
-import { receiveAllPokemon } from './actions/pokemon_actions';
+import { receiveAllPokemon, requestAllPokemon } from './actions/pokemon_actions';
 import configureStore from './store/store';
+
 
 window.fetchAllPokemon = fetchAllPokemon;
 window.receiveAllPokemon = receiveAllPokemon;
+window.requestAllPokemon = requestAllPokemon;
 
 document.addEventListener('DOMContentLoaded', () => {
   const store = configureStore();

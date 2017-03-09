@@ -14,9 +14,9 @@ import Root from './components/root';
 // window.selectAllPokemon = selectAllPokemon;
 
 document.addEventListener('DOMContentLoaded', () => {
-  // window.store = store;
-
   const store = configureStore();
   const rootEl = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, rootEl);
+
+  // window.store = store;
 });

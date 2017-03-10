@@ -4,7 +4,12 @@ class Api::PokemonController < ApplicationController
     render :index
   end
 
-  def update
+  def create
+    @pokemon = Pokemon.new(pokemon_params)
+
+    if @pokemon.save
+      render :show
+    end
   end
 
   def show
@@ -13,5 +18,10 @@ class Api::PokemonController < ApplicationController
   end
 
   def destory
+  end
+
+  def pokemon_params
+    params.require(:pokemon).permit(:name, :attack, :defense, :poke_type,
+                                    :image_url, :moves => [])
   end
 end
